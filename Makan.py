@@ -11,10 +11,10 @@ def generate_weekdays(start_date, end_date):
     return dates.strftime('%m/%d/%Y').tolist()
 
 # User inputs
-start_date = "2025/02/25"  
-end_date = "2025/02/28"   
-employee_id = "internship0001"     
-full_name = "Christian Gunawan"     
+start_date = "2025/03/04"
+end_date = "2025/03/31"
+employee_id = "internship0001"
+full_name = "Christian Gunawan"
 
 # Generate list of weekdays
 weekdays = generate_weekdays(start_date, end_date)
@@ -23,7 +23,7 @@ weekdays = generate_weekdays(start_date, end_date)
 driver = webdriver.Chrome()
 
 # Open Google Form
-form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdpbhMNE-S8TLPohAu7nKMxJTybSkpFHJO5bgMOk9AKA-08dA/viewform"
+form_url = "https://docs.google.com/forms/d/e/1FAIpQLSfIOpQrzA36KausWa_rOLvMPU2mi9sPq0r5hkpKMiwyBSDIsw/viewform?vc=0&c=0&w=1&flr=0"
 
 for date in weekdays:
     try:
@@ -31,7 +31,6 @@ for date in weekdays:
         time.sleep(3)  # Allow time for form to load
 
         # Locate input fields
-        #id_field = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
         id_field = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
         name_field = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
         
